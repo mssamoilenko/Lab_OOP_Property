@@ -48,3 +48,49 @@ class Order:
 
 order1 = Order([("Лампа", 10, 5)])
 print(order1.total_cost)
+#task3
+class Square:
+    def __init__(self, side):
+        self._side = side
+    @property
+    def side(self):
+        return self._side
+    @side.setter
+    def side(self, value):
+        if value <= 0:
+            raise ValueError("Side length must be a positive number")
+        self._side = value
+    @property
+    def area(self):
+        return self.side ** 2
+square = Square(4)
+print("Side length:", square.side)
+print("Area:", square.area)
+# task4
+class Person:
+    def __init__(self, weight, height):
+        self.weight = weight
+        self.height = height
+    @property
+    def weight(self):
+        return self._weight
+    @weight.setter
+    def weight(self, value):
+        if value <= 0:
+            raise ValueError("Weight must be a positive number")
+        self._weight = value
+    @property
+    def height(self):
+        return self._height
+    @height.setter
+    def height(self, value):
+        if value <= 0:
+            raise ValueError("Height must be a positive number")
+        self._height = value
+    @property
+    def bmi(self):
+        return self.weight / (self.height ** 2)
+person = Person(58, 1.64)
+print("Weight:", person.weight)
+print("Height:", person.height)
+print("BMI:", person.bmi)

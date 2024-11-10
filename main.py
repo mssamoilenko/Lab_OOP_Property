@@ -31,3 +31,20 @@ class Car:
 
 car1 = Car(300, 3)
 print(car1.average_speed)
+#task2
+class Order:
+    def __init__(self, items):
+        self._items = items
+    @property
+    def items(self):
+        return self._items
+
+    @property
+    def total_cost(self):
+        total = 0
+        for name, quantity, price in self._items:
+            total += quantity * price
+        return total
+
+order1 = Order([("Лампа", 10, 5)])
+print(order1.total_cost)
